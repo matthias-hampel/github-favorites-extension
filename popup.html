@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title>GitHub Favorite Repos</title>
+  <link rel="stylesheet" href="popup.css" />
+</head>
+<body>
+  <div class="popup">
+    <header class="popup-header">
+      <h1>Favorite Repos</h1>
+      <p class="popup-sub">Shown at the top of every github.com page</p>
+    </header>
+
+    <section id="current-repo-section" class="section" hidden>
+      <button id="add-current-btn" class="btn btn-primary btn-block">
+        + Add <span id="current-repo-label"></span>
+      </button>
+    </section>
+
+    <section class="section">
+      <form id="add-form" class="add-form">
+        <input id="add-input" type="text" placeholder="owner/repo" autocomplete="off" />
+        <button type="submit" class="btn">Add</button>
+      </form>
+      <p id="add-error" class="error"></p>
+    </section>
+
+    <section class="section">
+      <ul id="fav-list" class="fav-list"></ul>
+      <p id="empty-state" class="empty-state" hidden>No favorites yet. Add one above.</p>
+    </section>
+  </div>
+  <script src="popup.js"></script>
+</body>
+</html>

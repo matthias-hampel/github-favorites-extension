@@ -1,0 +1,138 @@
+/* A second navbar row directly below GitHub's own header, present on every
+   github.com page (anchored to header[role="banner"], which is present
+   sitewide) rather than to a page-specific tabs nav. */
+#gh-fav-bar {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  scrollbar-width: thin;
+  gap: 8px;
+  padding: 10px 16px;
+  background: var(--bgColor-inset, #f6f8fa);
+  border-bottom: 1px solid var(--borderColor-default, #d0d7de);
+}
+
+/* Each favorite is its own separate chip (not one shared joined pill) —
+   simpler, and it means the add control below can swap itself for a bare
+   input without dragging a shared border/background along with it. */
+.gh-fav-chip {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  flex-shrink: 0;
+  padding: 6px 10px;
+  border: 1px solid var(--borderColor-default, #d0d7de);
+  border-radius: 6px;
+  background: transparent;
+  color: var(--fgColor-default, #1f2328);
+  font-size: 12px;
+  line-height: 1.4;
+  text-decoration: none;
+  white-space: nowrap;
+  cursor: grab;
+  transition: background-color 0.1s ease-in-out;
+}
+
+.gh-fav-chip:hover {
+  background: var(--bgColor-accent-muted, #ddf4ff);
+  color: var(--fgColor-accent, #0969da);
+  text-decoration: none;
+}
+
+.gh-fav-chip--dragging {
+  opacity: 0.4;
+}
+
+.gh-fav-chip--drop-target {
+  border-color: var(--borderColor-accent-emphasis, #0969da);
+  background: var(--bgColor-accent-muted, #ddf4ff);
+}
+
+.gh-fav-chip-label {
+  max-width: 220px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.gh-fav-chip-remove {
+  font-size: 14px;
+  line-height: 1;
+  padding: 0 2px;
+  border-radius: 4px;
+  color: var(--fgColor-muted, #656d76);
+  opacity: 0;
+  transition: opacity 0.1s ease-in-out;
+}
+
+.gh-fav-chip:hover .gh-fav-chip-remove {
+  opacity: 1;
+}
+
+.gh-fav-chip-remove:hover {
+  color: var(--fgColor-danger, #d1242f);
+  background: var(--bgColor-danger-muted, #ffebe9);
+}
+
+/* The add control: a square icon button that swaps in-place for a bare
+   input when clicked — never both, never wrapped in extra chrome. */
+.gh-fav-add-wrap {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+.gh-fav-add-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  height: 30px;
+  padding: 0;
+  border: 1px solid var(--borderColor-default, #d0d7de);
+  border-radius: 6px;
+  background: transparent;
+  color: var(--fgColor-default, #1f2328);
+  cursor: pointer;
+}
+
+.gh-fav-add-btn svg {
+  display: block;
+  overflow: visible;
+}
+
+.gh-fav-add-btn:hover {
+  background: var(--bgColor-accent-muted, #ddf4ff);
+  color: var(--fgColor-accent, #0969da);
+  border-color: var(--borderColor-accent-emphasis, #0969da);
+}
+
+.gh-fav-add-form {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.gh-fav-add-input {
+  width: 160px;
+  height: 30px;
+  padding: 0 8px;
+  box-sizing: border-box;
+  font-size: 12px;
+  border-radius: 6px;
+  border: 1px solid var(--borderColor-accent-emphasis, #0969da);
+  background: var(--bgColor-default, #fff);
+  color: var(--fgColor-default, #1f2328);
+}
+
+.gh-fav-add-input:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px var(--bgColor-accent-muted, #ddf4ff);
+}
+
+.gh-fav-add-error {
+  font-size: 11px;
+  color: var(--fgColor-danger, #d1242f);
+  white-space: nowrap;
+}

@@ -1,0 +1,149 @@
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+  background: #f6f8fa;
+  color: #1f2328;
+}
+
+.popup {
+  width: 300px;
+  padding: 14px;
+}
+
+.popup-header h1 {
+  font-size: 15px;
+  margin: 0 0 2px 0;
+}
+
+.popup-sub {
+  margin: 0 0 12px 0;
+  font-size: 11px;
+  color: #656d76;
+}
+
+.section {
+  margin-bottom: 12px;
+}
+
+.section:last-child {
+  margin-bottom: 0;
+}
+
+.btn {
+  padding: 6px 10px;
+  font-size: 12px;
+  border-radius: 6px;
+  border: 1px solid #d0d7de;
+  background: #f6f8fa;
+  color: #1f2328;
+  cursor: pointer;
+}
+
+.btn:hover {
+  background: #eaeef2;
+}
+
+.btn-primary {
+  background: #2da44e;
+  border-color: rgba(27, 31, 36, 0.15);
+  color: #fff;
+}
+
+.btn-primary:hover {
+  background: #2c974b;
+}
+
+.btn-block {
+  width: 100%;
+}
+
+.add-form {
+  display: flex;
+  gap: 6px;
+}
+
+#add-input, #username-input {
+  flex: 1;
+  padding: 6px 8px;
+  font-size: 12px;
+  border-radius: 6px;
+  border: 1px solid #d0d7de;
+  background: #fff;
+  color: #1f2328;
+}
+
+#username-input {
+  width: 100%;
+  margin-top: 4px;
+}
+
+.error {
+  margin: 4px 0 0 0;
+  font-size: 11px;
+  color: #d1242f;
+  min-height: 14px;
+}
+
+.fav-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  max-height: 220px;
+  overflow-y: auto;
+}
+
+.fav-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 6px 8px;
+  border-radius: 6px;
+  font-size: 12px;
+  cursor: grab;
+}
+
+.fav-item:hover {
+  background: #eaeef2;
+}
+
+.fav-item--dragging {
+  opacity: 0.4;
+}
+
+.fav-item--drop-target {
+  background: #ddf4ff;
+  outline: 1px dashed #0969da;
+}
+
+.fav-item a {
+  color: #0969da;
+  text-decoration: none;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.fav-item a:hover {
+  text-decoration: underline;
+}
+
+.fav-remove {
+  border: none;
+  background: none;
+  color: #656d76;
+  cursor: pointer;
+  font-size: 14px;
+  padding: 0 4px;
+}
+
+.fav-remove:hover {
+  color: #d1242f;
+}
+
+.empty-state {
+  font-size: 12px;
+  color: #656d76;
+  margin: 4px 0 0 0;
+}
