@@ -30,8 +30,15 @@
   function findAnchor() {
     // The sitewide header — present on every github.com page, so anchoring
     // here (rather than to a page-specific tabs nav) means the bar shows
-    // up everywhere consistently.
-    return document.querySelector('header[role="banner"]');
+    // up everywhere consistently. GitHub's newer logged-in header no longer
+    // carries role="banner", so fall back to the header holding the GitHub
+    // logo, then to the first <header> on the page.
+    return (
+      document.querySelector('header[role="banner"]') ||
+      document.querySelector("header.AppHeader") ||
+      document.querySelector(".octicon-mark-github")?.closest("header") ||
+      document.querySelector("header")
+    );
   }
 
   // Each favorite is its own separate chip — not joined into one shared

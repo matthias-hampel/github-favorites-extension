@@ -1,5 +1,5 @@
 /* A second navbar row directly below GitHub's own header, present on every
-   github.com page (anchored to header[role="banner"], which is present
+   github.com page (anchored to the sitewide GitHub header, which is present
    sitewide) rather than to a page-specific tabs nav. */
 #gh-fav-bar {
   display: flex;
